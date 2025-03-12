@@ -128,7 +128,7 @@ function main() {
     }
 
     // Add 20 primary shapes (cubes, spheres, cylinders)
-    const shapeMaterial = new THREE.MeshPhongMaterial(); // We'll set color per shape
+    const shapeMaterial = new THREE.MeshPhongMaterial(); // Set color per shape
 
     // 10 Cubes
     for (let i = 0; i < 10; i++) {
@@ -214,7 +214,7 @@ function main() {
             mtl.preload();
             objLoader.setMaterials(mtl);
             objLoader.load('./hat/hat.obj', (hat) => {
-                // Scale and position the hat relative to the penguin (you can adjust this based on your preference)
+                // Scale and position the hat relative to the penguin
                 hat.scale.set(1.5, 1.5, 1.5);
                 hat.position.set(-2, 13.5, 4);  // Adjust the Y-position to sit nicely on the penguin's head
 
@@ -229,7 +229,7 @@ function main() {
     // Waddle and Feet Lift Animation
     let waddleTime = 0;  // Variable to control the waddling movement
     let waddleDirection = 1;  // Control direction (1 = right, -1 = left)
-    let waddleSpeed = 0.015;  // Slower speed of waddling (slowed further)
+    let waddleSpeed = 0.015;  // Speed of waddling
     let waddleRange = 2;  // How far the penguin will sway to the side
     let bodyTiltAmount = 0.2;  // Body tilt for each waddle cycle
     let feetLiftAmount = 0.5;  // Feet lifting amount (up and down)
@@ -249,7 +249,7 @@ function main() {
                 waddleDirection *= -1;  // Reverse direction
             }
 
-            // Apply the sway movement along the x-axis (now that penguin is facing forward)
+            // Apply the sway movement along the x-axis
             penguinGroup.position.x = waddleTime;  // This gives a more controlled sway
 
             // Apply body tilt to simulate waddling (leaning from side to side)
